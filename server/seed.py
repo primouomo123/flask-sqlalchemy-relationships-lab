@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 from app import app
-from models import db, Event, Session, Speaker, Bio
+from models import db, Event, Session, Speaker, Bio, session_speaker
 import datetime
 
 with app.app_context():
     # Clear all table data
-    db.session.execute(db.text('DELETE FROM session_speakers'))
+    db.session.execute(session_speaker.delete())
     Bio.query.delete()
     Session.query.delete()
     Speaker.query.delete()
