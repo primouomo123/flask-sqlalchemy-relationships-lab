@@ -78,6 +78,8 @@ def get_session_speakers(id):
         return jsonify(body), 200
     else:
         return make_response({"error": "Session not found"}, 404)
+    
+    #
 
 
 if __name__ == '__main__':
